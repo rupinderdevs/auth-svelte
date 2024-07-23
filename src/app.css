@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* @font-face {
+  font-family: 'SEGOE';
+  src: url('../static/fonts/SegoeUI.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'SEGOE', sans-serif;
+} */
+
+body {
+  font-family: "Exo 2", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: rgba(0, 161, 236, 0.445) transparent;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  @apply w-2;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 161, 236, 0.438);
+  border-radius: 10px;
+  border: 2px solid #ffffff;
+}
