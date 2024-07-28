@@ -1,14 +1,18 @@
 <script lang="ts">
+	// external deps
+	import { onMount } from 'svelte';
+	import { themeChange } from 'theme-change';
 
-	import  "../app.css"
-	// export let data: {
-	// 	data: any;
-	// };
+	// internal deps
+	import Navbar from '$lib/component/navbar/Navbar.svelte';
+
+	import '../app.css';
+
+	onMount(() => themeChange());
 </script>
 
-<!-- <h1>HOme Page Layout</h1>
-<b>{data.data}</b> -->
+<main class="">
+	<!-- <Navbar /> -->
 
-<main class="px-20 py-10">
 	<slot />
 </main>
