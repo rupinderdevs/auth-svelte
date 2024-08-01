@@ -12,7 +12,11 @@
 </script>
 
 <main class="">
-	<!-- <Navbar /> -->
-
+	<Navbar />
+	<a href="/" class="pb-2 space-x-3">Home</a>
+	<a href="/protected" class="pb-3">Protected</a>
+	<form action="/logout" method="POST">
+		<button class="border rounded-xl bg-red-400 px-4 py-1">Logout</button>
+	</form>
 	<slot />
 </main>

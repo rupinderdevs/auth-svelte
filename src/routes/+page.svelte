@@ -6,7 +6,12 @@
 	import type { ProductsResponse } from '$lib/types';
 	import { onMount } from 'svelte';
 
-	export let data: ProductsResponse;
+	// export let data: ProductsResponse;
+
+	import type { PageData } from './$types';
+
+	export let data: PageData;
+	
 	console.log('Data pagee--->>', data.data.products);
 	const handleIncrement = () => coolNum.update((i) => (i += 1));
 // 	const handleDecrement = () => coolNum.update((i) => (i -= 1));
@@ -30,12 +35,29 @@ onMount(()=>{
 	console.log('$user-----', $user);
 </script>
 
-<span>Home page</span>
+
 <!-- <pre>{JSON.stringify(data, null, 2)}</pre> -->
 <!-- <NumberDisplay />
 <button class="bg-gray-100 p-3 text-xl" on:click={handleDecrement}>-</button>
 
 <button class="bg-gray-100 p-3 text-xl" on:click={handleIncrement}>+</button> -->
+
+
+<main>
+	<h1 class="text-4xl pb-4">`handle` Hook in SvelteKit</h1>
+	{#if data.user}
+		<p>Welcome, {data.user.email}</p>
+	{:else}
+		<div class="space-x-2 ">
+			<form action="?/login" method="POST">
+				<button  type="submit" class="border rounded-xl bg-purple-400 px-4 py-1">Login</button>
+			</form>
+		</div>
+	{/if}
+</main>
+
+<!-- 
+
 {#if $user}
     <p>Users:</p>
 	<p>{$userLimit.limit}</p>
@@ -46,7 +68,7 @@ onMount(()=>{
     </ul>
 {:else}
     <p>Loading users...</p>
-{/if}
+{/if} -->
 
 <!-- <h1>{data.data.total} Products Found</h1> -->
 <!-- <ul class="grid grid-cols-1 md:grid-cols-3 gap-10">
